@@ -10,9 +10,10 @@ from bs4 import BeautifulSoup
 from pypdf import PdfReader
 
 
-def _fetch_page_content(page_num=1, connect_reties=3):
+def _fetch_page_content(page_num=1):
   url = f"https://www.b3.com.br/pt_br/regulacao/oficios-e-comunicados/?pagination={page_num}"
 
+  # ToDo - retry on except
   try:
     response = requests.get(url)
   except Exception as e:
@@ -22,6 +23,8 @@ def _fetch_page_content(page_num=1, connect_reties=3):
 
 
 def _get_pdf_content(url):
+  
+  # ToDo - retry on except
   return requests.get(url)
 
 
@@ -32,14 +35,15 @@ def scrape_b3(page_num):
   base_url = "https://www.b3.com.br"
   data = []
 
+  # For each published communication
   for content in content_divs:
     published_date = content.select("div.least-content")[0].text
     published_title = content.select("div.content p.primary-text")[0].text
     published_abstract = content.select("div.content p.resumo-oficio")[0].text
     published_subject = content.select("div.content p.assunto-oficio")[0].text
-    href = content.select("div.content ul li a")[0].get("href", None)
+    communication_link = content.select("div.content ul li a")[0].get("href", None)
 
-    url = base_url + href
+    url = base_url + communication_link
     
     pdf_response = _get_pdf_content(url)
     pdf_bytes = pdf_response.content
