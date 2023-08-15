@@ -55,8 +55,10 @@ def scrape_b3(page_num):
 
   return pd.DataFrame(data, columns=["published_date", "published_title", "published_abstract", "published_subject", "url", "full_text"])
 
+
 if __name__ == "__main__":
-    num_processes = 10
+    num_processes = 8
+    pagination = [i for i in range(1, 275)] # There are 274 pages
 
     with multiprocessing.Pool(processes=num_processes) as pool:
         results = list(
