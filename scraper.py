@@ -1,8 +1,6 @@
 import io
 import multiprocessing
 import requests
-import time
-from datetime import date, datetime
 
 import pandas as pd
 import tqdm
@@ -72,4 +70,4 @@ if __name__ == "__main__":
             )
         )
     df = pd.concat(results)
-    df.to_csv("results.csv")
+    df.to_parquet("results.parquet", engine="pyarrow")
