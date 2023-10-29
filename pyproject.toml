@@ -18,6 +18,7 @@ requests = "^2.31.0"
 jupyterlab = "^4.0.7"
 pdfminer-six = "^20221105"
 pypdfium2 = "^4.22.0"
+matplotlib = "^3.8.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.3"
