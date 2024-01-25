@@ -60,7 +60,7 @@ def scrape_b3(page_num):
 
 if __name__ == "__main__":
     num_processes = 8
-    pagination = [i for i in range(1, 275)] # There are 274 pages
+    pagination = [i for i in range(1, 285)] # There are 274 pages
 
     with multiprocessing.Pool(processes=num_processes) as pool:
         results = list(
