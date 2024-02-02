@@ -11,17 +11,19 @@ WIP
 ### Notebooks
 WIP
 
-- Webscraping dos dados da B3
-- Preparação dos dados da B3
+0. Webscraping dos dados da B3
+1. Preparação dos dados da B3
+2. Análises de Convergência e Índice de Coleman Liau
 
 ### Scripts
-WIP
 
 - scraper_pdf.py
 - extract_pdf.py
 
+\* Uma nota importante
+
 ### Dados
-WIP
+O dataset padrão ouro gerado encontra-se em `/data/dataset.csv`. As saídas geradas pelos modelos estão em `/data/outputs`, com cada arquivo representando um dos modelos Bode, Mistral e T5, respectivamente.
 
 - PDF
 - JSON
