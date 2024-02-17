@@ -18,7 +18,7 @@ Os arquivos presentes em `/notebooks` estão numerados de acordo com a ordem ló
 0. Webscraping dos dados da B3
 1. Preparação dos dados da B3
 2. Análises de Convergência e Índice de Coleman Liau
-3. TODO - Treinamento e geração
+3. Treinamento e geração
 
 ### Scripts
 Os arquivos com a lógica de partes do processamento estão em `/src`. Eles são:
@@ -26,6 +26,8 @@ Os arquivos com a lógica de partes do processamento estão em `/src`. Eles são
   - Esse arquivo contém a lógica de funcionamento dos processos de webscraping mas aqui sem necessariamente depender de um notebook para sua execução.
 - extract_pdf.py
   - Já aqui estão os processos para extração e processamento dos textos a partir dos PDFs para JSON, e a partir de JSON para TXT. 
+
+Instruções para execução da extração textual estão no README dentro do diretório `/src`.
 
 ### Dados
 O dataset padrão ouro consolidado a partir da atuação de avaliadores humados com a criação de sumários de referência encontra-se em `/data/dataset.csv`. As saídas geradas pelos modelos estão em `/data/outputs`, com cada arquivo representando um dos modelos Bode, Mistral e T5, respectivamente.
